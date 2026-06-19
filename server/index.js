@@ -341,13 +341,17 @@ async function handleOAuthCallback(req, res) {
     const oauth2 = google.oauth2({ version: 'v2', auth: oauth2Client })
     const { data: userInfo } = await oauth2.userinfo.get()
 
-    const domain = userInfo.email.split('@')[1]
-    if (domain !== process.env.ALLOWED_DOMAIN) {
-      return res.redirect(
-        `${FRONTEND_URL}/login?error=${encodeURIComponent(
-          'Access restricted to @' + process.env.ALLOWED_DOMAIN + ' accounts only.'
-        )}`
-      )
+    // Domain restriction is optional — only enforced if ALLOWED_DOMAIN is set in server/.env
+    const allowedDomain = process.env.ALLOWED_DOMAIN
+    if (allowedDomain) {
+      const domain = userInfo.email.split('@')[1]
+      if (domain !== allowedDomain) {
+        return res.redirect(
+          `${FRONTEND_URL}/login?error=${encodeURIComponent(
+            'Access restricted to @' + allowedDomain + ' accounts only.'
+          )}`
+        )
+      }
     }
 
     tokenStore.set(userInfo.id, tokens)
