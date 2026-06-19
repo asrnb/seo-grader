@@ -1,0 +1,38 @@
+{
+  "name": "seo-ai-grader",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "node server/index.js",
+    "dev:all": "npx concurrently \"npm run dev\" \"npm run dev:server\"",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google-analytics/data": "^5.2.1",
+    "@primeuix/themes": "^2.0.3",
+    "@tailwindcss/vite": "^4.2.1",
+    "@vueuse/motion": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "echarts": "^6.0.0",
+    "express": "^5.1.0",
+    "googleapis": "^148.0.0",
+    "html2pdf.js": "^0.14.0",
+    "jsonwebtoken": "^9.0.2",
+    "motion": "^12.36.0",
+    "pinia": "^3.0.4",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.4",
+    "tailwindcss": "^4.2.1",
+    "vue": "^3.5.30",
+    "vue-echarts": "^8.0.1",
+    "vue-router": "^5.0.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.5",
+    "vite": "^7.3.1"
+  }
+}
