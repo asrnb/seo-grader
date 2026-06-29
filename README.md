@@ -1,6 +1,6 @@
 # SEO AI Grader
 
-A dashboard for SEO teams to monitor and grade website performance using data from **Google Analytics 4**, **Google Search Console**, and **Ahrefs**.
+A dashboard for SEO teams to monitor and grade website performance using data from **Google Analytics 4** and, **Google Search Console**.
 
 ## Stack
 
